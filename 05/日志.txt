@@ -1,0 +1,23 @@
+2020.3.3
+尝试做了一个小游戏
+
+剪刀石头布
+
+使用了
+if elif else 嵌套
+while语句循环
+循环break,continue
+输入input
+
+模块random
+random.choice（）对列表元素的随机选择
+
+列表list
+list.append添加元素
+list.acount（）统计某元素个数
+len()统计列表元素总个数
+
+a in list[] 判断元素是否在列表中
+
+对元素True or False的判断
+从而进行循环控制

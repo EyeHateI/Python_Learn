@@ -1,0 +1,20 @@
+import yaml
+from Add import *
+class reg_log:
+    def register():
+        while True:
+            print(repr('<注册>').rjust(12))
+            account = Password.account_judge()
+            with open('info.yaml','r+',encoding='utf-8') as f:
+                a = yaml.safe_load(f)
+                try:
+                    b = a[account]
+                    print("[账号]已被注册,请重新输入")
+                    c = input("是否跳转登陆?(Y/N)")
+                    if c == 'N':
+                        continue
+                    elif c == 'Y':
+                        reg_log.login()
+                        break
+                except:
+                    keypassword = Password.input_judge("输入[�
