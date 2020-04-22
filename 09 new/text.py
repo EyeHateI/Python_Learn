@@ -2,17 +2,12 @@ import hashlib
 
 import re
 
-import os
-
 import tkinter as tk
 import tkinter.messagebox
 
 import yaml
 
-curpath = os.path.dirname(os.path.realpath(__file__))
-yamlpath = os.path.join(curpath, "info.yaml")
-n = open(yamlpath,'w',encoding='utf-8')
-n.close()
+
 
 def Lock(string):
     password = hashlib.sha256()
@@ -54,7 +49,7 @@ def mainGUI():
     tk.Label(window,text='Designed by EyeHateI').place(x=40,y=260)
 
     def login():
-        f = open('info.yaml','r+',encoding='utf-8')
+        f = open('F:\\360downloads\\python\\WorkPlace\\09 new\\info.yaml','r+',encoding='utf-8')
         a = yaml.safe_load(f)
 
         if len(account.get()) == 0:
@@ -138,7 +133,7 @@ def sign_up():
     info5.place(x=310,y=120)
 
     def register():
-        f1 = open('info.yaml','r+',encoding='utf-8')
+        f1 = open('F:\\360downloads\\python\\WorkPlace\\09 new\\info.yaml','r+',encoding='utf-8')
         a1 = yaml.safe_load(f1)
         dict0 = {}
         if len(userName.get()) == 0:
@@ -181,7 +176,7 @@ def sign_up():
                         if least <= len(P_w.get()) <= length and least <= len(P_w2.get()) <= length:
                             if P_w.get() == P_w2.get():
                                 f1.close()
-                                f2 = open('info.yaml','a+',encoding='utf-8')
+                                f2 = open('F:\\360downloads\\python\\WorkPlace\\09 new\\info.yaml','a+',encoding='utf-8')
                                 a2 = yaml.safe_load(f2)
                                 dict0[userName.get()] = Lock(P_w2.get())
                                 yaml.dump(dict0,f2)
@@ -201,5 +196,6 @@ def sign_up():
                     info3['fg'] = 'red'
     tk.Button(window2,text='确定',command=register,font=('Arial',14),width=17,bg='grey').place(x=120,y=160)
     window2.mainloop()
+
 mainGUI()
 
