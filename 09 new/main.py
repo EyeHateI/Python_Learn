@@ -155,10 +155,10 @@ def sign_up():                #注册函数
             else:
                 if str(userName.get()).isalnum():    #限制账号 只能使用字母数字 str.isalnum()方法 含字母或数字 输出True反之输出False
                     global least,length
-                    if len(userName.get()) < least:  #账号长度判断
+                    if len(userName.get()) < U_least:  #账号长度判断
                         Text3.set('x 账号长度过短')
                         info3['fg'] = 'red'
-                    elif len(userName.get()) > length:
+                    elif len(userName.get()) > U_length:
                         Text3.set('x 账号长度过长')
                         info3['fg'] = 'red'
                     else:
@@ -180,7 +180,7 @@ def sign_up():                #注册函数
                             else:
                                 Text4.set('√')
                                 info4['fg'] = 'lime'
-                        if least <= len(P_w.get()) <= length and least <= len(P_w2.get()) <= length:
+                        if P_w_least <= len(P_w.get()) <= P_w_length and P_w_least <= len(P_w2.get()) <= P_w_length:
                             if P_w.get() == P_w2.get():   #判断两次密码是否一致
                                 f1.close()                #一致则将加密后的密码添加进配置文件(a+模式)
                                 f2 = open(yamlpath,'a+',encoding='utf-8')
