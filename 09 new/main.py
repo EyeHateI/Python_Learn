@@ -1,9 +1,6 @@
 import hashlib
-
-import re
-
 import os
-
+import re
 import tkinter as tk
 import tkinter.messagebox
 
@@ -177,7 +174,6 @@ def sign_up():
                             else:
                                 Text4.set('√')
                                 info4['fg'] = 'lime'
-
                         if least <= len(P_w.get()) <= length and least <= len(P_w2.get()) <= length:
                             if P_w.get() == P_w2.get():
                                 f1.close()
@@ -202,4 +198,3 @@ def sign_up():
     tk.Button(window2,text='确定',command=register,font=('Arial',14),width=17,bg='grey').place(x=120,y=160)
     window2.mainloop()
 mainGUI()
-
