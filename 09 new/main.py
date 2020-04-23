@@ -14,14 +14,13 @@ def Lock(string):                                       #对密码进行加密
 
 curpath = os.path.dirname(os.path.realpath(__file__))   #获取当前路径
 yamlpath = os.path.join(curpath, "info.yaml")          
-n = open(yamlpath,'a+',encoding='utf-8')                #创建名为info.yaml的配置文件
+n = open(yamlpath,'r+',encoding='utf-8')                #创建名为info.yaml的配置文件
 m = yaml.safe_load(n)
 dict = {'admin':Lock('123456')}                         #新建默认配置
-if m != None:
-    pass
-else:
+try:
+    m['admin']
+except:
     yaml.dump(dict,n)
-
 
 def mainGUI():                                          #主进程函数
     window = tk.Tk()                                    #主窗口 大小：480x300 标题：登录
