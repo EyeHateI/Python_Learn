@@ -16,4 +16,5 @@ if b == 1:
 elif b != 1:
     print("OK")
 print()
+
 input("按Enter键退出")
