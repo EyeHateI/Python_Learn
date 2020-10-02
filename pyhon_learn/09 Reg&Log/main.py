@@ -14,7 +14,7 @@ def Lock(string):                                       #对密码进行加密
 
 curpath = os.path.dirname(os.path.realpath(__file__))   #获取当前路径
 yamlpath = os.path.join(curpath, "info.yaml")          
-n = open(yamlpath,'r+',encoding='utf-8')                #创建名为info.yaml的配置文件
+n = open(yamlpath,'w+',encoding='utf-8')                #创建名为info.yaml的配置文件
 m = yaml.safe_load(n)
 dict = {'admin':Lock('123456')}                         #新建默认配置
 try:
@@ -127,7 +127,7 @@ def sign_up():                #注册函数
     Text3 = tk.StringVar(window2,value='')     #账号判断提示信息
     Text3.set('')
     info3 = tk.Label(window2,textvariable=Text3)
-    info3.place(x=310,y=40)
+    info3.place(x=310,y=40) 
     
     Text4 = tk.StringVar(window2,value='')     #密码1提示信息
     Text4.set('')
